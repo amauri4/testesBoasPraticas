@@ -14,7 +14,7 @@ A escolha do Python como linguagem para o desenvolvimento deste projeto foi base
 ## Escolha das Bibliotecas
 
 ### Biblioteca de Testes: unittest
-A biblioteca **unittest** foi escolhida para a realização dos testes devido à sua integração nativa com o Python e às suas características robustas para a criação e execução de testes automatizados. O uso de **unittest** oferece as seguintes vantagens:
+A biblioteca `unittest` foi escolhida para a realização dos testes devido à sua integração nativa com o Python e às suas características robustas para a criação e execução de testes automatizados. O uso de `unittest` oferece as seguintes vantagens:
 
 - **Integração Nativa**: O Python possui suporte interno à biblioteca unittest, o que elimina a necessidade de instalar pacotes adicionais e facilita a configuração do ambiente de testes.
 - **Estrutura Clara e Simples**: unittest permite a organização de testes de forma estruturada, criando classes de teste com métodos de setup e teardown que facilitam o controle do ambiente de testes. Gostei bastante da simplicidade de escrever testes para validar funcionalidades, como a adição de produtos ao catálogo e ao pedido, conforme foi requisitado.
