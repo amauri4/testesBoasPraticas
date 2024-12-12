@@ -4,6 +4,7 @@ from catalogo.produto import Produto
 from pedidos.pedido import Pedido
 
 class TestePedido(unittest.TestCase):
+    print("Iniciando testes de pedido...")
 
     def setUp(self):
         self.produto1 = Produto(1, "Camiseta", 50.0)
@@ -30,6 +31,9 @@ class TestePedido(unittest.TestCase):
         total = self.pedido.calcularTotal()
         self.assertEqual(total, 50.0)
         mock_info.assert_any_call(f"Total do pedido de João Silva: R${total:.2f}. Sem desconto aplicado.")
-
+    
+    print("Fim dos testes de pedido.")
+    print("\n")
+    
 if __name__ == "__main__":
     unittest.main()

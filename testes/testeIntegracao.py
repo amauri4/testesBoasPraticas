@@ -5,6 +5,7 @@ from catalogo.catalogo import Catalogo
 from pedidos.pedido import Pedido
 
 class TestIntegracao(unittest.TestCase):
+    print("Iniciando testes de integração...")
 
     def setUp(self):
         self.catalogo = Catalogo()
@@ -24,6 +25,9 @@ class TestIntegracao(unittest.TestCase):
         self.pedido.adicionarProduto(self.catalogo.buscarProduto(2))
         total = self.pedido.calcularTotal()
         self.assertEqual(total, 153.0) 
+    
+    print("Fim dos testes de integração.")
+    print("\n")
 
 if __name__ == "__main__":
     unittest.main()
