@@ -4,6 +4,26 @@
 Neste projeto, a principal escolha foi utilizar **Python** como linguagem de desenvolvimento, em conjunto com as bibliotecas **unittest** para testes e **logging** para gerenciamento de logs. Essas escolhas foram motivadas pela familiaridade com a linguagem, sua simplicidade e praticidade, bem como pela robustez e versatilidade das bibliotecas para garantir a qualidade do código e facilitar a manutenção. Por estar usando bastante **Python** ultimamente, considerei que seria uma boa alternativa me familiarizar, também, com o processo de testes, verificações e logging nessa linguagem.
 O foco do projeto esteve relacionado a boas práticas de desenvolvimento, incluindo o uso de testes, mocking, validações, geração de logs e técnicas de depuração. Para mim, essa atividade foi muito interessante, pois percebi, no meu cotidiano, que costumava focar muito mais no desenvolvimento do que nos testes. Assim, por meio dessa atividade, passei a dar mais atenção aos testes nos meus códigos e, consequentemente, a tornar meus códigos mais robustos.
 
+## Funcionamento geral do sistema 
+
+O sistema é composto por três principais classes: `Produto`, `Catalogo` e `Pedido`, que interagem entre si para gerenciar um catálogo de produtos e processar pedidos de clientes.
+
+- **Classe Produto**: Representa um produto com atributos como `id`, `nome` e `preço`. Essa classe é utilizada tanto para representar os itens do catálogo e nos pedidos.
+
+- **Classe Catalogo**: Gerencia um catálogo de produtos. Possui métodos para adicionar produtos, listar os produtos existentes e buscar produtos pelo seu ID. O catálogo valida a duplicação de IDs ao adicionar um novo produto e gera logs de erro ou sucesso para essas ações.
+
+- **Classe Pedido**: Representa um pedido feito por um cliente, contendo uma lista de produtos e o nome desse cleinte. A classe permite adicionar produtos ao pedido e calcular o total, aplicando um desconto de 10% para valores acima de R$100. Ela também gera logs informativos e de erro durante essas operações.
+
+### Interação entre as Classes
+- O `Catalogo` gerencia os produtos disponíveis, e o `Pedido` permite que os produtos sejam adicionados a um pedido. 
+- Quando um produto é adicionado ao catálogo, o método `adicionarProduto` da classe `Catalogo` verifica se o produto já existe no pedido, garantindo que não haja duplicações e nem produtos nulos.
+- A classe `Pedido` também utiliza os produtos do `Catalogo` para calcular o valor total do pedido, aplicando descontos quando necessário.
+
+### Testes de Integração e Unitários
+- **Testes Unitários**: Foram realizados testes para validar individualmente os métodos de cada classe. Para o `Catalogo`, os testes verificaram a adição de produtos, a verificação de duplicação de IDs e o tratamento de erros. Para o `Pedido`, foram testados a adição de produtos, o cálculo do total e a aplicação ou não de descontos.
+  
+- **Testes de Integração**: Validaram a interação entre as classes `Catalogo` e `Pedido`. Isso incluiu a adição de produtos ao catálogo e a posterior inclusão desses produtos em um pedido, verificando se os comportamentos das classes funcionam conforme esperado em conjunto.
+
 ## Escolha da Linguagem: Python
 A escolha do Python como linguagem para o desenvolvimento deste projeto foi baseada nas seguintes razões:
 
