@@ -42,11 +42,10 @@ class TesteCatalogo(unittest.TestCase):
         self.assertIn(self.produto1, produtos)
         self.assertIn(self.produto2, produtos)
 
-    def test_listar_produtos(self):
-        self.catalogo.adicionarProduto(self.produto1)
-        self.catalogo.adicionarProduto(self.produto2)
-        produtos = self.catalogo.listarProdutos()
-        self.assertEqual(len(produtos), 2)
+    def test_buscar_produto_existente(self):
+       self.catalogo.adicionarProduto(self.produto1)
+       produtoBuscado = self.catalogo.buscarProduto(self.produto1.id)
+       self.assertEqual(self.produto1, produtoBuscado)
     
     @patch('catalogo.catalogo.logger.error')
     def test_buscar_produto_nao_existente(self, mock_error):
